@@ -33,7 +33,7 @@ The database contains the following tables:
 
 ## ER Diagram
 
-![ER Diagram](diagrams/ER_diagram.png)
+![ER Diagram](diagrams/ER diagram.png)
 
 ## Repository Structure
 

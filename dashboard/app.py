@@ -72,39 +72,22 @@ revenue_summary = pd.read_sql(revenue_query, engine)
 
 col1, col2, col3 = st.columns(3)
 
-col1.metric(
-    "Total Orders",
-    int(orders_summary["total_orders"].iloc[0])
-)
-
-col2.metric(
-    "Total Items Ordered",
-    int(orders_summary["total_items"].iloc[0])
-)
-
+col1.metric("Total Orders", int(orders_summary["total_orders"].iloc[0]))
+col2.metric("Total Items Ordered", int(orders_summary["total_items"].iloc[0]))
 col3.metric(
     "Completed Order Revenue",
     f"${revenue_summary['total_revenue'].iloc[0]:,.2f}"
 )
 
 st.subheader("Orders by Status")
-
 status_df = pd.read_sql(status_query, engine)
-st.bar_chart(
-    status_df.set_index("status")
-)
+st.bar_chart(status_df.set_index("status"))
 
 st.subheader("Top Categories by Sales")
-
 category_df = pd.read_sql(category_query, engine)
-st.bar_chart(
-    category_df.set_index("category_name")
-)
+st.bar_chart(category_df.set_index("category_name"))
 
 st.subheader("Monthly Order Trend")
-
 monthly_df = pd.read_sql(monthly_orders_query, engine)
 monthly_df["month"] = pd.to_datetime(monthly_df["month"])
-st.line_chart(
-    monthly_df.set_index("month")
-)
+st.line_chart(monthly_df.set_index("month"))

@@ -1,4 +1,4 @@
--- Function to validate order delivery timestamps
+-- Function to validate order timeline consistency
 
 CREATE OR REPLACE FUNCTION validate_order_timeline()
 RETURNS TRIGGER AS $$
@@ -25,6 +25,8 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+
+DROP TRIGGER IF EXISTS trg_validate_order_timeline ON orders;
 
 CREATE TRIGGER trg_validate_order_timeline
 BEFORE INSERT OR UPDATE ON orders

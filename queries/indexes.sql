@@ -1,4 +1,4 @@
--- Indexes for frequently used foreign keys and filtering columns
+-- Indexes for commonly joined and filtered columns
 
 CREATE INDEX IF NOT EXISTS idx_product_category
 ON product(category_id);

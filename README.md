@@ -33,7 +33,7 @@ The database contains the following tables:
 
 ## ER Diagram
 
-![ER Diagram](diagrams/ER diagram.png)
+![ER Diagram](diagrams/ER%20diagram.png)
 
 ## Repository Structure
 
@@ -50,7 +50,7 @@ The database contains the following tables:
 │   └── users.csv
 │
 ├── diagrams/
-│   └── er_diagram.png
+    └── ER diagram.png
 │
 ├── schema/
 │   ├── create_tables.sql
